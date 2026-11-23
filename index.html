@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualidade de Vida dos Estudantes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f5f4;
+            color: #263b36;
+        }
+
+        header {
+            background: linear-gradient(135deg, #287c68, #54ae91);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .formulario {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #287c68;
+            margin-bottom: 15px;
+        }
+
+        .introducao {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #596b65;
+        }
+
+        .campo {
+            margin-bottom: 23px;
+        }
+
+        label, .pergunta {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd8d3;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #287c68;
+        }
+
+        .opcao {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        .opcao input {
+            accent-color: #287c68;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #287c68;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1d5c4d;
+        }
+
+        #mensagem {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e1f5e9;
+            color: #216b45;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64756e;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            .formulario {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Qualidade de Vida dos Estudantes</h1>
+        <p>Como está sua rotina? Sua saúde e seu bem-estar também importam!</p>
+    </header>
+
+    <main>
+        <section class="formulario">
+
+            <h2>Pesquisa sobre qualidade de vida</h2>
+
+            <p class="introducao">
+                Este formulário tem como objetivo conhecer melhor
+                a qualidade de vida dos estudantes, analisando seus
+                hábitos, sua saúde física, mental e sua rotina escolar.
+                As respostas devem ser sinceras.
+            </p>
+
+            <form id="formulario">
+
+                <div class="campo">
+                    <label for="nome">Nome (opcional):</label>
+                    <input type="text" id="nome" name="nome"
+                           placeholder="Digite seu nome">
+                </div>
+
+                <div class="campo">
+                    <label for="idade">Qual é a sua idade?</label>
+                    <input type="number" id="idade" name="idade"
+                           min="10" max="100" required>
+                </div>
+
+                <div class="campo">
+                    <span class="pergunta">
+                        1. Como você avalia sua qualidade de vida?
+                    </span>
+
+                    <label class="opcao">
+                        <input type="radio" name="qualidade"
+                               value="Ótima" required> Ótima
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="qualidade"
+                               value="Boa"> Boa
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="qualidade"
+                               value="Regular"> Regular
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="qualidade"
+                               value="Ruim"> Ruim
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <span class="pergunta">
+                        2. Quantas horas você costuma dormir por noite?
+                    </span>
+
+                    <label class="opcao">
+                        <input type="radio" name="sono"
+                               value="Menos de 5 horas" required>
+                        Menos de 5 horas
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="sono"
+                               value="5 a 6 horas"> 5 a 6 horas
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="sono"
+                               value="7 a 8 horas"> 7 a 8 horas
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="sono"
+                               value="Mais de 8 horas"> Mais de 8 horas
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <span class="pergunta">
+                        3. Você considera sua alimentação saudável?
+                    </span>
+
+                    <label class="opcao">
+                        <input type="radio" name="alimentacao"
+                               value="Sempre" required> Sempre
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="alimentacao"
+                               value="Às vezes"> Às vezes
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="alimentacao"
+                               value="Raramente"> Raramente
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="alimentacao"
+                               value="Nunca"> Nunca
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <span class="pergunta">
+                        4. Você pratica atividades físicas?
+                    </span>
+
+                    <label class="opcao">
+                        <input type="radio" name="atividade"
+                               value="Todos os dias" required>
+                        Todos os dias
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="atividade"
+                               value="Algumas vezes na semana">
+                        Algumas vezes na semana
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="atividade"
+                               value="Raramente"> Raramente
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="atividade"
+                               value="Nunca"> Nunca
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <span class="pergunta">
+                        5. Você costuma sentir estresse por causa dos estudos?
+                    </span>
+
+                    <label class="opcao">
+                        <input type="radio" name="estresse"
+                               value="Frequentemente" required>
+                        Frequentemente
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="estresse"
+                               value="Às vezes"> Às vezes
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="estresse"
+                               value="Raramente"> Raramente
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="estresse"
+                               value="Nunca"> Nunca
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <span class="pergunta">
+                        6. Você consegue equilibrar os estudos e o lazer?
+                    </span>
+
+                    <label class="opcao">
+                        <input type="radio" name="equilibrio"
+                               value="Sim" required> Sim
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="equilibrio"
+                               value="Mais ou menos"> Mais ou menos
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="equilibrio"
+                               value="Não"> Não
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <label for="bemestar">
+                        7. O que mais influencia seu bem-estar?
+                    </label>
+
+                    <select id="bemestar" name="bemestar" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Família">Família</option>
+                        <option value="Amigos">Amigos</option>
+                        <option value="Estudos">Estudos</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="sugestao">
+                        8. O que poderia melhorar sua qualidade de vida?
+                    </label>
+
+                    <textarea id="sugestao" name="sugestao"
+                              rows="4"
+                              placeholder="Escreva sua opinião..."
+                              required></textarea>
+                </div>
+
+                <button type="submit">Enviar respostas</button>
+
+                <div id="mensagem" role="status" aria-live="polite">
+                    <h3>Obrigado pela participação!</h3>
+                    <p>Sua resposta foi registrada nesta página.</p>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto escolar - Pesquisa sobre Qualidade de Vida dos Estudantes</p>
+        <p>Cuide de você. Sua saúde importa!</p>
+    </footer>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const mensagem = document.getElementById("mensagem");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!formulario.reportValidity()) {
+                return;
+            }
+
+            const respostas = new FormData(formulario);
+
+            console.log("Respostas da pesquisa:");
+
+            for (const [pergunta, resposta] of respostas.entries()) {
+                console.log(pergunta + ": " + resposta);
+            }
+
+            mensagem.style.display = "block";
+
+            formulario.reset();
+
+            mensagem.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+    </script>
+
+</body>
+</html>
